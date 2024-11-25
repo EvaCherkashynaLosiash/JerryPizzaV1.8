@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255 247 237);
+        }
+        h2 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: rgb(124 45 18);
+            text-align: center;
+        }
+        .item {
+            background-color: #fff;
+            margin: 15px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .item h3 {
+            color: rgb(124 45 18);
+            font-size: 1.2em;
+        }
+        .item p {
+            font-size: 1em;
+            color: black;
+        }
+        .item .price {
+            color: rgb(124 45 18);
+            background-color: rgb(254 215 170);
+            font-size: 1rem;
+        }
+        .orderNow {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgb(249, 115, 22);
+            color: #fff;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .orderNow:hover {
+            background-color: rgb(194, 65, 12);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h2>Меню</h2>
+    <div class="container">
+        {% for item in menu_items %}
+        <div class="item">
+            <h3>{{ item.name }}</h3>
+            <p class="price">{{ item.price }}грн</p>
+            <p>{{ item.description }}</p>
+            <a href="/order" class="orderNow">Замовити</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
